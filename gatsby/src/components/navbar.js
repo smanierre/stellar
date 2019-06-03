@@ -5,17 +5,10 @@ const Wrapper = styled.nav`
   position: absolute;
   top: 0;
   left: 0;
-  height: 75px;
+  height: 7vh;
   width: 100%;
   background-color: lightcoral;
   display: flex;
-  justify-content: center;
-`
-
-const ItemContainer = styled.ul`
-  display: flex;
-  list-style: none;
-  text-align: center;
   justify-content: center;
 `
 
@@ -27,10 +20,12 @@ export const Logo = styled.div`
   border-left: 1px solid black;
 `
 
-export const NavItem = styled.li`
-  color: black;
-  padding: 25px 50px;
+export const NavItem = styled.a`
+  display: inline-block;
+  padding: 0 25px
+  text-align: center;
 `
+
 export const Navbar = props => {
   let leftChildren = []
   let rightChildren = []
@@ -46,9 +41,9 @@ export const Navbar = props => {
 
   return (
     <Wrapper>
-      <ItemContainer>{leftChildren}</ItemContainer>
+      {leftChildren}
       {logo}
-      <ItemContainer>{rightChildren}</ItemContainer>
+      {rightChildren}
     </Wrapper>
   )
 }
