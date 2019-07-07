@@ -1,18 +1,32 @@
 import PropTypes from "prop-types"
 import React from "react"
+import styled from "styled-components"
 
-import { Navbar, Logo, NavItem } from "./navbar"
+import { Navbar, NavItem } from "./navbar"
+
+const StyledHeader = styled.header`
+    grid-column: gutter-left / -1;
+    grid-row: header;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+`
+
 const Header = props => {
   return (
-    <header>
+    <StyledHeader>
       <Navbar>
-        <NavItem left>Home</NavItem>
-        <NavItem left>Projects</NavItem>
-        <Logo logo>Test</Logo>
-        <NavItem right>About</NavItem>
-        <NavItem right>Contact</NavItem>
+        <NavItem to="/">LOGO</NavItem>
+        <NavItem to="/">
+          Home
+        </NavItem>
+        <NavItem to="/projects">Projects</NavItem>
+        <NavItem to="/about">About</NavItem>
+        <NavItem to="/contact">Contact</NavItem>
       </Navbar>
-    </header>
+    </StyledHeader>
   )
 }
 

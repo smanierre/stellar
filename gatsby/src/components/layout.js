@@ -8,11 +8,23 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
+import styled from "styled-components"
 
 import Header from "./header"
 import "./layout.css"
 
-const Layout = ({ children }) => (
+const PageLayout = styled.div`
+    display: grid;
+    grid-template-rows: [header] 75px auto;
+    grid-template-columns: [gutter-left] 1fr [content] 10fr [gutter-right] 1fr;
+`
+
+const MainLayout = styled.main`
+    grid-column: content;
+    grid-row: 2;
+`
+
+const Layout = props => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -24,10 +36,10 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
+      <PageLayout>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <main>{children}</main>
-      </>
+        <MainLayout>{props.children}</MainLayout>
+      </PageLayout>
     )}
   />
 )

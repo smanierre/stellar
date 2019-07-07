@@ -1,61 +1,72 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
+
+const color = "#333"
 
 const Wrapper = styled.nav`
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 7vh;
+  height: 100%;
   width: 100%;
-  background-color: lightblue;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  padding: 3% 7% 0 10%;
 
-  & *:not(:last-child)::after {
+  & a:first-child {
+    margin-right: auto;
+  }
+
+  & a:first-child:hover {
+    transform: scale(1.1);
+  }
+`
+const ItemWrapper = styled(Link)`
+  display: inline-block;
+  vertical-align: middle;
+  transition: all 0.3s;
+  margin: auto 0;
+
+  &:not(:first-child):hover {
+    cursor: pointer;
+    border-bottom: 1px solid ${color};
+    transform: scale(1.03);
+  }
+
+  &:not(:first-child):hover span {
+    transform: translateY(-3px);
+  }
+
+  &:not(:first-child):hover span::after {
+    font-size: inherit;
+  }
+
+  &::before {
     content: "";
     display: inline-block;
-    height: 75%;
-    border-right: 1px solid black;
-  }
-
-  & *:hover {
-    background-color: black;
-    color: white;
+    vertical-align: middle;
+    height: 100%;
   }
 `
 
-export const Logo = styled.div`
-  height: 100%;
-  text-align: center;
-  color: black;
-  padding: 0 25px;
-`
+export const NavItem = props => (
+  <ItemWrapper to={props.to}>
+    <ItemText>{props.children}</ItemText>
+  </ItemWrapper>
+)
 
-export const NavItem = styled.a`
+const ItemText = styled.span`
   display: inline-block;
-  height: 100%;
   padding: 0 25px;
+  margin: auto 0;
   text-align: center;
+  text-decoration: none;
+  color: ${color};
+  transition: all 0.3s;
+
+  &::after {
+    content: " \\2192";
+    font-size: 0;
+    transition: 0.3s all;
+  }
 `
 
-export const Navbar = props => {
-  let leftChildren = []
-  let rightChildren = []
-  let logo
-
-  if (props.children && props.children.length) {
-    props.children.forEach(child => {
-      if (child.props.left) leftChildren.push(child)
-      if (child.props.right) rightChildren.push(child)
-      if (child.props.logo) logo = child
-    })
-  }
-
-  return (
-    <Wrapper>
-      {leftChildren}
-      {logo}
-      {rightChildren}
-    </Wrapper>
-  )
-}
+export const Navbar = ({ children }) => <Wrapper>{children}</Wrapper>
