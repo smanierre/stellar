@@ -25,7 +25,7 @@ class IndexPage extends Component {
       <Background
         background={() =>
           this.state.width < 900
-            ? `linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 22%,rgba(0,0,0,0) 100%);`
+            ? `linear-gradient(to bottom, #e8e8e8 0%,#6d6d6d 100%);`
             : `url(${
                 this.props.data.background.childImageSharp.fluid.originalImg
               });`
