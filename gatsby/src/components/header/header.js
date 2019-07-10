@@ -12,7 +12,7 @@ const StyledHeader = styled.header`
   top: 0;
   left: 0;
   width: 100%;
-  height: 75px;
+  height: ${() => (window.innerWidth < 900 ? "50px" : "75px")};
 `
 
 const Header = props => {

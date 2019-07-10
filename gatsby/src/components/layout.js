@@ -15,7 +15,8 @@ import "./layout.css"
 
 const PageLayout = styled.div`
   display: grid;
-  grid-template-rows: [header] 75px auto;
+  grid-template-rows: [header] ${() =>
+      window.innerWidth < 900 ? "50px" : "75px"} auto;
   grid-template-columns: [gutter-left] 1fr [content] 5fr [gutter-right] 1fr;
 
   @media (min-width: 900px) {
