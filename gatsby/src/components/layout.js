@@ -14,10 +14,11 @@ import Header from "./header/header"
 import "./layout.css"
 
 const PageLayout = styled.div`
+  max-width: ${() => window.innerWidth}px;
   display: grid;
   grid-template-rows: [header] ${() =>
       window.innerWidth < 900 ? "50px" : "75px"} auto;
-  grid-template-columns: [gutter-left] 1fr [content] 5fr [gutter-right] 1fr;
+  grid-template-columns: [gutter-left] 50px [content] 1fr [gutter-right] 50px;
 
   @media (min-width: 900px) {
     grid-template-columns: [gutter-left] 1fr [content] 10fr [gutter-right] 1fr;

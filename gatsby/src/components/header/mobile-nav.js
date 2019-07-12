@@ -1,10 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
 
 const StyledNav = styled.nav`
   height: 100%;
-  width: 100%;
   position: relative;
   grid-column: gutter-right;
 `
@@ -27,19 +25,23 @@ const DropdownIcon = styled.span`
     width: 30px;
     height: 3px;
     background-color: black;
-    transform: translateY(-3px);
     position: absolute;
     top: 50%;
     left: 50%;
+  }
+
+  &::before {
+    transform: translate(-50%, calc(-50% + 6px));
+  }
+
+  &::after {
+    transform: translate(-50%, calc(-50% - 6px));
   }
 `
 
 const MobileNav = ({ children }) => (
   <StyledNav>
-    <Link>Hello</Link>
-    <DropdownContainer>
-      <DropdownIcon>&nbsp;</DropdownIcon>
-    </DropdownContainer>
+    <DropdownIcon>&nbsp;</DropdownIcon>
   </StyledNav>
 )
 

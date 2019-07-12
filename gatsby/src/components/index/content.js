@@ -5,13 +5,12 @@ const Container = styled.section`
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr;
-  width: 100%;
   height: 100%;
   padding-top: 5%;
 `
 
 const HeadingContainer = styled.div`
-  font-size: 108px;
+  font-size: 17px;
   margin-left: 5%;
   color: white;
 

@@ -3,7 +3,7 @@ import React from "react"
 import styled from "styled-components"
 
 import { Navbar, NavItem } from "./navbar"
-import MobileNav from "./mobile-nav"
+import MobileHeader from "./mobile-header"
 
 const StyledHeader = styled.header`
   grid-column: gutter-left / -1;
@@ -11,7 +11,6 @@ const StyledHeader = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
   height: ${() => (window.innerWidth < 900 ? "50px" : "75px")};
 `
 
@@ -33,15 +32,13 @@ const Header = props => {
       Contact
     </NavItem>,
   ]
-  console.log(window.innerWidth)
-  return (
+
+  return window.innerWidth > 900 ? (
     <StyledHeader>
-      {window.innerWidth > 900 ? (
-        <Navbar>{items}</Navbar>
-      ) : (
-        <MobileNav>{items}</MobileNav>
-      )}
+      <Navbar>{items}</Navbar>
     </StyledHeader>
+  ) : (
+    <MobileHeader />
   )
 }
 
