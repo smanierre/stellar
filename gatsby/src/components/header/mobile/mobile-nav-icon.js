@@ -35,6 +35,17 @@ const DropdownIcon = styled.span`
   }
 `
 
-const MobileNavIcon = ({ children }) => <DropdownIcon>&nbsp;</DropdownIcon>
+const NavIconContainer = styled.label`
+  margin-left: auto;
+  padding-left: 15%;
+  display: inline-block;
+  position: relative;
+`
+
+const MobileNavIcon = ({ children }) => (
+  <NavIconContainer for="menu-toggle">
+    <DropdownIcon>&nbsp;</DropdownIcon>
+  </NavIconContainer>
+)
 
 export default MobileNavIcon

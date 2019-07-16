@@ -5,13 +5,16 @@ import styled from "styled-components"
 import { Navbar, NavItem } from "./desktop/navbar"
 import MobileHeader from "./mobile/mobile-header"
 
+//Because gatsby cant generate with a reference to window
+const windowGlobal = typeof window !== "undefined" && window
+
 const StyledHeader = styled.header`
   grid-column: gutter-left / -1;
   grid-row: header;
   position: fixed;
   top: 0;
   left: 0;
-  height: ${() => (window.innerWidth < 900 ? "50px" : "75px")};
+  height: ${() => (windowGlobal.innerWidth < 900 ? "50px" : "75px")};
 `
 
 const Header = props => {
@@ -33,7 +36,7 @@ const Header = props => {
     </NavItem>,
   ]
 
-  return window.innerWidth > 900 ? (
+  return windowGlobal.innerWidth > 900 ? (
     //TODO: Refactor this to just have <DesktopHeader /> and move components into the desktop folder
     <StyledHeader>
       <Navbar>{items}</Navbar>

@@ -1,34 +1,22 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
-import RelativeContainer from "../../utilities/RelativeContainer"
+
 import MobileNavIcon from "./mobile-nav-icon"
 import NavMenu from "./mobile-menu"
-
-const Logo = styled(Link)`
-  grid-column: gutter-left;
-  display: inline-block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-`
+import Logo, { Logogo, LogoContainer } from "./mobile-logo"
 
 const Header = styled.header`
   grid-column: gutter-left / -1;
   display: flex;
-  flex-direction: reverse;
-` //TODO: Flexbox container for items that takes up whole first row and flex reverse to get nav menu on right side
-
-const LogoContainer = styled(RelativeContainer)`
-  padding-left: 15%;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
 `
 
-const NavContainer = styled.label`
-  margin-left: auto;
-  padding-right: 15%;
-  display: inline-block;
-  position: relative;
+const FlexContainer = styled.div`
+  display: flex;
+  flex-basis: 100%;
+  height: 100%;
+  width: 100%;
 `
 
 const MenuToggle = styled.input`
@@ -38,17 +26,20 @@ const MenuToggle = styled.input`
 
   &:checked + nav {
     background-color: blue;
+    left: calc(100% - 200px);
+  }
+
+  &:checked + div > label > span {
+    transform: rotate(45deg);
   }
 `
 
 const MobileHeader = () => (
   <Header>
-    <LogoContainer>
-      <Logo>LOGO</Logo>
-    </LogoContainer>
-    <NavContainer for="menu-toggle">
+    <FlexContainer>
+      <Logo />
       <MobileNavIcon />
-    </NavContainer>
+    </FlexContainer>
     <MenuToggle type="checkbox" id="menu-toggle" />
     <NavMenu />
   </Header>

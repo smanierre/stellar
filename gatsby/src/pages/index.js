@@ -6,19 +6,22 @@ import { graphql } from "gatsby"
 import Content from "../components/index/content.js"
 import Background from "../components/utilities/background.js"
 
+//Because you can't reference window in gatsby
+const windowGlobal = typeof window !== "undefined" && window
+
 class IndexPage extends Component {
   constructor(props) {
     super(props)
-    this.state = { width: window.innerWidth }
+    this.state = { width: windowGlobal.innerWidth }
     this.handleResize = this.handleResize.bind(this)
   }
 
   handleResize() {
-    this.setState({ width: window.innerWidth })
+    this.setState({ width: windowGlobal.innerWidth })
   }
 
   componentDidMount() {
-    window.addEventListener("resize", this.handleResize)
+    windowGlobal.addEventListener("resize", this.handleResize)
   }
   render() {
     return (

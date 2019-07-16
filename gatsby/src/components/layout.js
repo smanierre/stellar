@@ -13,11 +13,14 @@ import styled from "styled-components"
 import Header from "./header/header"
 import "./layout.css"
 
+//Because gatsby can't compile with references to window I guess
+const windowGlobal = typeof window !== "undefined" && window
+
 const PageLayout = styled.div`
-  max-width: ${() => window.innerWidth}px;
+  max-width: ${() => windowGlobal.innerWidth}px;
   display: grid;
   grid-template-rows: [header] ${() =>
-      window.innerWidth < 900 ? "50px" : "75px"} auto;
+      windowGlobal.innerWidth < 900 ? "50px" : "75px"} auto;
   grid-template-columns: [gutter-left] 50px [content] 1fr [gutter-right] 50px;
 
   @media (min-width: 900px) {
