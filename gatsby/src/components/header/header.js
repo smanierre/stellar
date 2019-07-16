@@ -2,8 +2,8 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 
-import { Navbar, NavItem } from "./navbar"
-import MobileHeader from "./mobile-header"
+import { Navbar, NavItem } from "./desktop/navbar"
+import MobileHeader from "./mobile/mobile-header"
 
 const StyledHeader = styled.header`
   grid-column: gutter-left / -1;
@@ -34,6 +34,7 @@ const Header = props => {
   ]
 
   return window.innerWidth > 900 ? (
+    //TODO: Refactor this to just have <DesktopHeader /> and move components into the desktop folder
     <StyledHeader>
       <Navbar>{items}</Navbar>
     </StyledHeader>

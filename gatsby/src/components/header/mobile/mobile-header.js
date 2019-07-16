@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import RelativeContainer from "../../utilities/RelativeContainer"
 import MobileNavIcon from "./mobile-nav-icon"
+import NavMenu from "./mobile-menu"
 
 const Logo = styled(Link)`
   grid-column: gutter-left;
@@ -16,7 +17,9 @@ const Logo = styled(Link)`
 const Header = styled.header`
   grid-column: gutter-left / -1;
   display: flex;
-`
+  flex-direction: reverse;
+` //TODO: Flexbox container for items that takes up whole first row and flex reverse to get nav menu on right side
+
 const LogoContainer = styled(RelativeContainer)`
   padding-left: 15%;
 `
@@ -32,6 +35,10 @@ const MenuToggle = styled.input`
   position: absolute;
   top: -9999px;
   left: -9999px;
+
+  &:checked + nav {
+    background-color: blue;
+  }
 `
 
 const MobileHeader = () => (
@@ -43,6 +50,7 @@ const MobileHeader = () => (
       <MobileNavIcon />
     </NavContainer>
     <MenuToggle type="checkbox" id="menu-toggle" />
+    <NavMenu />
   </Header>
 )
 
