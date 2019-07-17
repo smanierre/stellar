@@ -1,57 +1,57 @@
-import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 
-import { Navbar, NavItem } from "./desktop/navbar"
-import MobileHeader from "./mobile/mobile-header"
+import Logo from "./logo"
 
-//Because gatsby cant generate with a reference to window
-const windowGlobal = typeof window !== "undefined" && window
-
-const StyledHeader = styled.header`
+const ResponsiveHeader = styled.header`
+  ${/*Base styles that will apply regardless of mobile or desktop. Also don't @ me about comments in template literals*/ ""}
   grid-column: gutter-left / -1;
   grid-row: header;
+  display: flex;
   position: fixed;
   top: 0;
   left: 0;
-  height: ${() => (windowGlobal.innerWidth < 900 ? "50px" : "75px")};
+  width: 100%;
+  height: 75px;
+
+  ${/*Mobile only styles*/ ""}
+  @media screen and (max-width: 899px) {
+    flex-wrap: wrap;
+
+    &:nth-child(2) {
+      margin-left: auto;
+    }
+  }
+
+  ${/*Desktop styles*/ ""}
+  @media screen and (min-width: 900px) {
+  }
 `
 
 const Header = props => {
-  const items = [
-    <NavItem to="/" key={1}>
-      LOGO
-    </NavItem>,
-    <NavItem to="/" key={2}>
-      Home
-    </NavItem>,
-    <NavItem to="/projects" key={3}>
-      Projects
-    </NavItem>,
-    <NavItem to="/about" key={4}>
-      About
-    </NavItem>,
-    <NavItem to="/contact" key={5}>
-      Contact
-    </NavItem>,
-  ]
+  // const items = [
+  //   <NavItem to="/" key={1}>
+  //     LOGO
+  //   </NavItem>,
+  //   <NavItem to="/" key={2}>
+  //     Home
+  //   </NavItem>,
+  //   <NavItem to="/projects" key={3}>
+  //     Projects
+  //   </NavItem>,
+  //   <NavItem to="/about" key={4}>
+  //     About
+  //   </NavItem>,
+  //   <NavItem to="/contact" key={5}>
+  //     Contact
+  //   </NavItem>,
+  // ]
 
-  return windowGlobal.innerWidth > 900 ? (
-    //TODO: Refactor this to just have <DesktopHeader /> and move components into the desktop folder
-    <StyledHeader>
-      <Navbar>{items}</Navbar>
-    </StyledHeader>
-  ) : (
-    <MobileHeader />
+  return (
+    <ResponsiveHeader>
+      <Logo />
+    </ResponsiveHeader>
   )
-}
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: `Stellar Avionics`,
 }
 
 export default Header

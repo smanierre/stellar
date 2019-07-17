@@ -6,24 +6,20 @@
  */
 
 import React from "react"
-import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
 import Header from "./header/header"
 import "./layout.css"
 
-//Because gatsby can't compile with references to window I guess
-const windowGlobal = typeof window !== "undefined" && window
-
 const PageLayout = styled.div`
-  max-width: ${() => windowGlobal.innerWidth}px;
+  max-width: 100vw;
   display: grid;
-  grid-template-rows: [header] ${() =>
-      windowGlobal.innerWidth < 900 ? "50px" : "75px"} auto;
+
+  grid-template-rows: [header] 75px auto;
   grid-template-columns: [gutter-left] 50px [content] 1fr [gutter-right] 50px;
 
-  @media (min-width: 900px) {
+  @media screen and (min-width: 900px) {
     grid-template-columns: [gutter-left] 1fr [content] 10fr [gutter-right] 1fr;
   }
 `
@@ -52,9 +48,5 @@ const Layout = props => (
     )}
   />
 )
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
 
 export default Layout

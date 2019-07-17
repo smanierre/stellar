@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-import RelativeContainer from "../../utilities/RelativeContainer"
+import RelativeContainer from "../utilities/RelativeContainer"
 
 const Logo = styled(Link)`
   grid-column: gutter-left;
@@ -14,7 +14,8 @@ const Logo = styled(Link)`
 `
 
 const LogoContainer = styled(RelativeContainer)`
-  padding-right: 15%;
+  ${"" /*TODO: Figure out a good padding solution that scales onto mobile. */}
+  padding-left: 10%;
 `
 
 export default () => (
