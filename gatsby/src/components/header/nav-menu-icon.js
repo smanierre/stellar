@@ -13,6 +13,11 @@ const DropdownIcon = styled.span`
   transform: translate(-50%, -50%);
   padding-right: 5px;
 
+  ${"" /*hide the menu icon because the desktop will just have the items listed out */}
+  @media screen and (min-width: 900px) {
+    display: none;
+  }
+
   &::before,
   &::after {
     content: "";
@@ -37,15 +42,28 @@ const DropdownIcon = styled.span`
 
 const NavIconContainer = styled.label`
   margin-left: auto;
-  padding-left: 15%;
+  padding-right: 88px;
   display: inline-block;
   position: relative;
 `
+//Input for the checkbox hack. Styles for the open menu icon and menu will have to go in here.
+const MenuToggle = styled.input`
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+
+  &:checked + nav {
+    left: calc(100% - 200px);
+  }
+`
 
 const MobileNavIcon = ({ children }) => (
-  <NavIconContainer for="menu-toggle">
-    <DropdownIcon>&nbsp;</DropdownIcon>
-  </NavIconContainer>
+  <>
+    <NavIconContainer for="menu-toggle">
+      <DropdownIcon>&nbsp;</DropdownIcon>
+    </NavIconContainer>
+    <MenuToggle type="checkbox" id="menu-toggle" />
+  </>
 )
 
 export default MobileNavIcon

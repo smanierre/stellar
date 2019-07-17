@@ -2,6 +2,8 @@ import React from "react"
 import styled from "styled-components"
 
 import Logo from "./logo"
+import NavMenuIcon from "./nav-menu-icon"
+import Nav from "./nav"
 
 const ResponsiveHeader = styled.header`
   ${/*Base styles that will apply regardless of mobile or desktop. Also don't @ me about comments in template literals*/ ""}
@@ -49,7 +51,9 @@ const Header = props => {
 
   return (
     <ResponsiveHeader>
-      <Logo />
+      <Logo to="/" />
+      <NavMenuIcon />
+      <Nav>{/*items*/}</Nav>
     </ResponsiveHeader>
   )
 }
