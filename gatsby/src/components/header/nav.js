@@ -6,10 +6,14 @@ const StyledNav = styled.nav`
   top: 75px;
   left: 100%;
   height: 100vh;
-  width: 200px;
-  background-color: black;
-  transition: 1s all;
+  width: 60%;
+  background-color: #e98074;
+  transition: 0.3s all ease-out;
   z-index: 100;
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+  font-size: 1.5rem;
 `
 
 const Nav = ({ children }) => <StyledNav>{children}</StyledNav>

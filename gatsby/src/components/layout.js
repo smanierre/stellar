@@ -10,7 +10,6 @@ import { StaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
 import Header from "./header/header"
-import ScreenCover from "./utilities/screen-cover"
 import "./layout.css"
 
 const PageLayout = styled.div`
@@ -45,7 +44,6 @@ const Layout = props => (
       <PageLayout>
         <Header siteTitle={data.site.siteMetadata.title} />
         <MainLayout>{props.children}</MainLayout>
-        <ScreenCover />
       </PageLayout>
     )}
   />

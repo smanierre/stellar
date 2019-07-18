@@ -48,8 +48,7 @@ const NavIconContainer = styled.label`
   position: relative;
   transition: 0.3s all;
   z-index: 100;
-`//TODO: Get this z-index and the z-index in the nav above the z-index on the screen cover
-
+` //TODO: Get this z-index and the z-index in the nav above the z-index on the screen cover
 
 //Input for the checkbox hack. Styles for the open menu icon and menu will have to go in here.
 const MenuToggle = styled.input`
@@ -58,7 +57,7 @@ const MenuToggle = styled.input`
   left: -9999px;
 
   &:checked ~ nav {
-    left: calc(100% - 200px);
+    left: 40%;
   }
 
   ${"" /*Styles for the icon when the menu is open */}
@@ -78,6 +77,12 @@ const MenuToggle = styled.input`
     &::after {
       transform: rotate(-135deg);
     }
+  }
+
+  &:checked ~ div {
+    visibility: visible;
+    opacity: 0.4;
+    pointer-events: auto;
   }
 `
 

@@ -4,6 +4,8 @@ import styled from "styled-components"
 import Logo from "./logo"
 import NavMenuIcon from "./nav-menu-icon"
 import Nav from "./nav"
+import ScreenCover from "../utilities/screen-cover"
+import NavItem from "./nav-item"
 
 const ResponsiveHeader = styled.header`
   ${/*Base styles that will apply regardless of mobile or desktop. Also don't @ me about comments in template literals*/ ""}
@@ -31,30 +33,28 @@ const ResponsiveHeader = styled.header`
 `
 
 const Header = props => {
-  // const items = [
-  //   <NavItem to="/" key={1}>
-  //     LOGO
-  //   </NavItem>,
-  //   <NavItem to="/" key={2}>
-  //     Home
-  //   </NavItem>,
-  //   <NavItem to="/projects" key={3}>
-  //     Projects
-  //   </NavItem>,
-  //   <NavItem to="/about" key={4}>
-  //     About
-  //   </NavItem>,
-  //   <NavItem to="/contact" key={5}>
-  //     Contact
-  //   </NavItem>,
-  // ]
+  const items = [
+    { text: "Home", to: "/" },
+    { text: "Projects", to: "/projects" },
+    { text: "About", to: "/about" },
+    { text: "Contact", to: "/contact" },
+  ]
 
   return (
-    <ResponsiveHeader>
-      <Logo to="/" />
-      <NavMenuIcon />
-      <Nav>{/*items*/}</Nav>
-    </ResponsiveHeader>
+    <>
+      <ResponsiveHeader>
+        <Logo to="/" />
+        <NavMenuIcon />
+        <Nav>
+          {items.map((item, index) => (
+            <NavItem to={item.to} key={index}>
+              {item.text}
+            </NavItem>
+          ))}
+        </Nav>
+        <ScreenCover />
+      </ResponsiveHeader>
+    </>
   )
 }
 
