@@ -9,6 +9,7 @@ const StyledNav = styled.nav`
   width: 200px;
   background-color: black;
   transition: 1s all;
+  z-index: 100;
 `
 
 const Nav = ({ children }) => <StyledNav>{children}</StyledNav>

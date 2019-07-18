@@ -29,6 +29,7 @@ const DropdownIcon = styled.span`
     top: 50%;
     left: 50%;
     border-radius: 3px;
+    transition: 0.3s all;
   }
 
   &::before {
@@ -45,24 +46,47 @@ const NavIconContainer = styled.label`
   padding-right: 88px;
   display: inline-block;
   position: relative;
-`
+  transition: 0.3s all;
+  z-index: 100;
+`//TODO: Get this z-index and the z-index in the nav above the z-index on the screen cover
+
+
 //Input for the checkbox hack. Styles for the open menu icon and menu will have to go in here.
 const MenuToggle = styled.input`
   position: absolute;
   top: -9999px;
   left: -9999px;
 
-  &:checked + nav {
+  &:checked ~ nav {
     left: calc(100% - 200px);
+  }
+
+  ${"" /*Styles for the icon when the menu is open */}
+  &:checked + label > span {
+    visibility: hidden;
+
+    &::before,
+    &::after {
+      visibility: visible;
+      left: 0;
+    }
+
+    &::before {
+      transform: rotate(135deg);
+    }
+
+    &::after {
+      transform: rotate(-135deg);
+    }
   }
 `
 
 const MobileNavIcon = ({ children }) => (
   <>
+    <MenuToggle type="checkbox" id="menu-toggle" />
     <NavIconContainer for="menu-toggle">
       <DropdownIcon>&nbsp;</DropdownIcon>
     </NavIconContainer>
-    <MenuToggle type="checkbox" id="menu-toggle" />
   </>
 )
 
