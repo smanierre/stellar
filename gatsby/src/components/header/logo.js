@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
+import { StaticQuery, Link, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import RelativeContainer from "../utilities/relative-container"
 
@@ -21,9 +22,38 @@ const LogoContainer = styled(RelativeContainer)`
     padding-left: 10%;
   }
 `
-
-export default () => (
-  <LogoContainer>
-    <Logo>LOGO</Logo>
-  </LogoContainer>
+//TODO: Get the image to actually display.
+export default props => (
+  <StaticQuery
+    query={graphql`
+      query {
+        background: file(relativePath: { eq: "stellar_logo_red.jpg" }) {
+          childImageSharp {
+            fluid {
+              originalImg
+            }
+          }
+        }
+      }
+    `}
+    render={data => (
+      <LogoContainer>
+        <Logo>
+          <Img fixed={data.background.childImageSharp.fluid.originalImg} />
+        </Logo>
+      </LogoContainer>
+    )}
+  />
 )
+
+export const pageQuery = graphql`
+  query {
+    background: file(relativePath: { eq: "stellar_logo_red.jpg" }) {
+      childImageSharp {
+        fluid {
+          originalImg
+        }
+      }
+    }
+  }
+`

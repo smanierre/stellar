@@ -12,12 +12,12 @@ const StyledItem = styled(Link)`
   text-decoration: none;
   color: #e85a4f;
 `
-//TODO: Get this onClick Working
+
 const NavItem = props => (
   <StyledItem
     to={props.to}
     onClick={() => {
-      document.querySelector("#menu-toggle").checked = true
+      document.querySelector("#menu-toggle").checked = false
     }}
   >
     {props.children}
