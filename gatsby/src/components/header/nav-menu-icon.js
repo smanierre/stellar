@@ -57,7 +57,7 @@ const MenuToggle = styled.input`
   left: -9999px;
 
   &:checked ~ nav {
-    left: 40%;
+    left: 0;
   }
 
   ${"" /*Styles for the icon when the menu is open */}
@@ -77,12 +77,6 @@ const MenuToggle = styled.input`
     &::after {
       transform: rotate(-135deg);
     }
-  }
-
-  &:checked ~ div {
-    visibility: visible;
-    opacity: 0.4;
-    pointer-events: auto;
   }
 `
 

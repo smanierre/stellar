@@ -4,7 +4,6 @@ import styled from "styled-components"
 import Logo from "./logo"
 import NavMenuIcon from "./nav-menu-icon"
 import Nav from "./nav"
-import ScreenCover from "../utilities/screen-cover"
 import NavItem from "./nav-item"
 
 const ResponsiveHeader = styled.header`
@@ -52,7 +51,6 @@ const Header = props => {
             </NavItem>
           ))}
         </Nav>
-        <ScreenCover />
       </ResponsiveHeader>
     </>
   )
