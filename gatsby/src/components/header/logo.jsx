@@ -14,16 +14,16 @@ const Logo = styled(Link)`
   transform: translate(-50%, -50%);
 `
 
+// Not arbitrary padding-left, 10% @ 900px is 88px, smooth transitions yo.
 const LogoContainer = styled(RelativeContainer)`
-  ${"" /*Not arbitrary, 10% @ 900px is 88px, smooth transitions yo.*/}
   padding-left: 88px;
 
   @media screen and (min-width: 900px) {
     padding-left: 10%;
   }
 `
-//TODO: Get the image to actually display.
-export default props => (
+// TODO: Get the image to actually display.
+export default () => (
   <StaticQuery
     query={graphql`
       query {
@@ -45,15 +45,3 @@ export default props => (
     )}
   />
 )
-
-export const pageQuery = graphql`
-  query {
-    background: file(relativePath: { eq: "stellar_logo_red.jpg" }) {
-      childImageSharp {
-        fluid {
-          originalImg
-        }
-      }
-    }
-  }
-`

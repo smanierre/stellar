@@ -13,7 +13,6 @@ const DropdownIcon = styled.span`
   transform: translate(-50%, -50%);
   padding-right: 5px;
 
-  ${"" /*hide the menu icon because the desktop will just have the items listed out */}
   @media screen and (min-width: 900px) {
     display: none;
   }
@@ -48,9 +47,9 @@ const NavIconContainer = styled.label`
   position: relative;
   transition: 0.3s all;
   z-index: 100;
-` //TODO: Get this z-index and the z-index in the nav above the z-index on the screen cover
+`
 
-//Input for the checkbox hack. Styles for the open menu icon and menu will have to go in here.
+// Input for the checkbox hack. Styles for the open menu icon and menu will have to go in here.
 const MenuToggle = styled.input`
   position: absolute;
   top: -9999px;
@@ -60,7 +59,6 @@ const MenuToggle = styled.input`
     left: 0;
   }
 
-  ${"" /*Styles for the icon when the menu is open */}
   &:checked + label > span {
     visibility: hidden;
 
@@ -80,7 +78,7 @@ const MenuToggle = styled.input`
   }
 `
 
-const MobileNavIcon = ({ children }) => (
+const MobileNavIcon = () => (
   <>
     <MenuToggle type="checkbox" id="menu-toggle" />
     <NavIconContainer for="menu-toggle">

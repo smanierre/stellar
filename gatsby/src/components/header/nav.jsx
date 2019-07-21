@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import styled from "styled-components"
 
 const StyledNav = styled.nav`
@@ -19,3 +20,7 @@ const StyledNav = styled.nav`
 const Nav = ({ children }) => <StyledNav>{children}</StyledNav>
 
 export default Nav
+
+Nav.propTypes = {
+  children: PropTypes.instanceOf(Array).isRequired,
+}

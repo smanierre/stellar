@@ -2,10 +2,10 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Content from "../components/index/content.js"
+import Background from "../components/utilities/background"
 
-const IndexPage = props => {
-  return (
+const ProjectPage = () => (
+  <Background>
     <Layout>
       <SEO
         title="Home"
@@ -23,9 +23,8 @@ const IndexPage = props => {
           "whelen",
         ]}
       />
-      <Content />
     </Layout>
-  )
-}
+  </Background>
+)
 
-export default IndexPage
+export default ProjectPage

@@ -8,6 +8,7 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
+import PropTypes from "prop-types"
 
 import Header from "./header/header"
 import Background from "./utilities/background"
@@ -53,3 +54,7 @@ const Layout = props => (
 )
 
 export default Layout
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+}
