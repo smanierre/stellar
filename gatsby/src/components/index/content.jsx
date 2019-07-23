@@ -1,47 +1,35 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
 
 const Container = styled.section`
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr;
-  height: 100%;
-  padding-top: 5%;
+  text-align: center;
 `
 
-const HeadingContainer = styled.div`
-  font-size: 17px;
-  margin-left: 5%;
-  color: white;
-
-  & h1 {
-    font-size: inherit;
-    font-weight: 400;
-  }
-
-  & h1:not(:first-child) {
-    margin-top: -4%;
-    margin-left: 20%;
-    display: inline-block;
-  }
-`
-
-const AboutContainer = styled.div`
-  padding-left: 3%;
+const StyledSpan = styled.span`
+  font-size: ${({ styles }) => styles.fontSize};
+  font-weight: ${({ styles }) => styles.fontWeight};
+  padding: ${({ styles }) => styles.padding};
 `
 
 const Content = () => (
   <Container>
-    <HeadingContainer>
-      <h1>Stellar</h1>
-      <h1>Avionics</h1>
-    </HeadingContainer>
-    <AboutContainer>
-      <p>
-        Here at stellar avionics, we are all about quality work, no matter how
-        small.
-      </p>
-    </AboutContainer>
+    <h1>
+      <StyledSpan
+        styles={{ fontSize: "3rem", fontWeight: "400", padding: "0 25% 0 0" }}
+      >
+        Stellar
+      </StyledSpan>
+      <br />
+      <StyledSpan
+        styles={{ fontSize: "2.5rem", fontWeight: "400", padding: "0 0 0 25%" }}
+      >
+        Avionics
+      </StyledSpan>
+    </h1>
+
+    <p>We offer quality avionic installs at competetive prices.</p>
+    <Link to="/projects">Learn More &rarr;</Link>
   </Container>
 )
 

@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { StaticQuery, Link, graphql } from "gatsby"
 import Img from "gatsby-image"
+import PropTypes from "prop-types"
 
 import RelativeContainer from "../utilities/relative-container"
 
@@ -14,23 +15,24 @@ const Logo = styled(Link)`
   transform: translate(-50%, -50%);
 `
 
-// Not arbitrary padding-left, 10% @ 900px is 88px, smooth transitions yo.
 const LogoContainer = styled(RelativeContainer)`
-  padding-left: 88px;
+  /* Not arbitrary padding-left, 10% @ 900px is 88px, smooth transitions yo. */
+  margin-left: 50px;
 
+  /* Desktop styles */
   @media screen and (min-width: 900px) {
-    padding-left: 10%;
+    margin-left: 5%;
   }
 `
-// TODO: Get the image to actually display.
-export default () => (
+
+const ExportedLogo = ({ to }) => (
   <StaticQuery
     query={graphql`
       query {
-        background: file(relativePath: { eq: "stellar_logo_red.jpg" }) {
+        logo: file(relativePath: { eq: "stellar_logo_red.png" }) {
           childImageSharp {
-            fluid {
-              originalImg
+            fixed(height: 100) {
+              ...GatsbyImageSharpFixed
             }
           }
         }
@@ -38,10 +40,20 @@ export default () => (
     `}
     render={data => (
       <LogoContainer>
-        <Logo>
-          <Img fixed={data.background.childImageSharp.fluid.originalImg} />
+        <Logo to={to}>
+          <Img fixed={data.logo.childImageSharp.fixed} />
         </Logo>
       </LogoContainer>
     )}
   />
 )
+
+export default ExportedLogo
+
+ExportedLogo.defaultProps = {
+  to: "/",
+}
+
+ExportedLogo.propTypes = {
+  to: PropTypes.string,
+}

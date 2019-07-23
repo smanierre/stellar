@@ -17,6 +17,7 @@ const ResponsiveHeader = styled.header`
   width: 100%;
   height: 75px;
 
+  /* Mobile styles */
   @media screen and (max-width: 899px) {
     flex-wrap: wrap;
 
@@ -25,6 +26,7 @@ const ResponsiveHeader = styled.header`
     }
   }
 
+  /* Desktop styles */
   @media screen and (min-width: 900px) {
   }
 `

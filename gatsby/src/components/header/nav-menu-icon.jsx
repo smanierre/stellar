@@ -81,7 +81,7 @@ const MenuToggle = styled.input`
 const MobileNavIcon = () => (
   <>
     <MenuToggle type="checkbox" id="menu-toggle" />
-    <NavIconContainer for="menu-toggle">
+    <NavIconContainer htmlFor="menu-toggle">
       <DropdownIcon>&nbsp;</DropdownIcon>
     </NavIconContainer>
   </>

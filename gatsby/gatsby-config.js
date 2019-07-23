@@ -1,5 +1,3 @@
-const path = require("path")
-
 module.exports = {
   siteMetadata: {
     title: `Stellar Avionics`,
@@ -12,7 +10,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     {
-        resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/images`,
         name: `images`,
@@ -31,8 +29,8 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#eae7dc`,
+        theme_color: `#eae7dc`,
         display: `minimal-ui`,
       },
     },

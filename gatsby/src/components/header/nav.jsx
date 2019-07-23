@@ -7,14 +7,14 @@ const StyledNav = styled.nav`
   left: -100vw;
   height: 100vh;
   width: 100vw;
-  background-color: #d8c3a5;
+  background-color: rgba(201, 199, 196, 1);
   padding-top: 33%;
   z-index: 10;
   display: flex;
   align-items: center;
   flex-direction: column;
   font-size: 24px;
-  transition: all 0.6s; cubic-bezier(0.75, 0.23, 0.75, 0.23);
+  transition: all 0.6s;
 `
 
 const Nav = ({ children }) => <StyledNav>{children}</StyledNav>
