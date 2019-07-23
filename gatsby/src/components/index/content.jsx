@@ -1,9 +1,11 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
+
+import ButtonLink from "../utilities/button-link"
 
 const Container = styled.section`
   text-align: center;
+  padding-top: 15%;
 `
 
 const StyledSpan = styled.span`
@@ -28,8 +30,10 @@ const Content = () => (
       </StyledSpan>
     </h1>
 
-    <p>We offer quality avionic installs at competetive prices.</p>
-    <Link to="/projects">Learn More &rarr;</Link>
+    <h2 style={{ margin: "30% 0", fontWeight: "400" }}>
+      Bravely go where many satisfied customers have gone before!
+    </h2>
+    <ButtonLink to="/projects">See our work &rarr;</ButtonLink>
   </Container>
 )
 
