@@ -4,32 +4,29 @@ import PropTypes from "prop-types"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Background from "../components/utilities/background"
 import Projects from "../components/projects/content"
 
 const ProjectPage = ({ data }) => (
-  <Background>
-    <Layout>
-      <SEO
-        title="Home"
-        keywords={[
-          `Stellar`,
-          `avionics`,
-          `aviation`,
-          "navigation",
-          "planes",
-          "plane",
-          "chester",
-          "connecticut",
-          "ct",
-          "airport",
-          "whelen",
-        ]}
-      />
-      {/* Passing just an array of each project object */}
-      <Projects data={data.allSanityProject.edges.map(edge => edge.node)} />
-    </Layout>
-  </Background>
+  <Layout>
+    <SEO
+      title="Home"
+      keywords={[
+        `Stellar`,
+        `avionics`,
+        `aviation`,
+        "navigation",
+        "planes",
+        "plane",
+        "chester",
+        "connecticut",
+        "ct",
+        "airport",
+        "whelen",
+      ]}
+    />
+    {/* Passing just an array of each project object */}
+    <Projects data={data.allSanityProject.edges.map(edge => edge.node)} />
+  </Layout>
 )
 
 export default ProjectPage

@@ -11,7 +11,6 @@ import styled from "styled-components"
 import PropTypes from "prop-types"
 
 import Header from "./header/header"
-import Background from "./utilities/background"
 import "./layout.css"
 
 const PageLayout = styled.div`
@@ -43,12 +42,10 @@ const Layout = props => (
       }
     `}
     render={data => (
-      <Background>
-        <PageLayout>
-          <Header siteTitle={data.site.siteMetadata.title} />
-          <MainLayout>{props.children}</MainLayout>
-        </PageLayout>
-      </Background>
+      <PageLayout>
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <MainLayout>{props.children}</MainLayout>
+      </PageLayout>
     )}
   />
 )

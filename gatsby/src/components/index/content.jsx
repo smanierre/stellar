@@ -8,26 +8,20 @@ const Container = styled.section`
   padding-top: 15%;
 `
 
-const StyledSpan = styled.span`
-  font-size: ${({ styles }) => styles.fontSize};
-  font-weight: ${({ styles }) => styles.fontWeight};
-  padding: ${({ styles }) => styles.padding};
-`
-
 const Content = () => (
   <Container>
     <h1>
-      <StyledSpan
-        styles={{ fontSize: "3rem", fontWeight: "400", padding: "0 25% 0 0" }}
+      <span
+        style={{ fontSize: "3rem", fontWeight: "400", padding: "0 25% 0 0" }}
       >
         Stellar
-      </StyledSpan>
+      </span>
       <br />
-      <StyledSpan
-        styles={{ fontSize: "2.5rem", fontWeight: "400", padding: "0 0 0 25%" }}
+      <span
+        style={{ fontSize: "2.5rem", fontWeight: "400", padding: "0 0 0 25%" }}
       >
         Avionics
-      </StyledSpan>
+      </span>
     </h1>
 
     <h2 style={{ margin: "30% 0", fontWeight: "400" }}>

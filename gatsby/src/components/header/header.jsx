@@ -16,6 +16,9 @@ const ResponsiveHeader = styled.header`
   left: 0;
   width: 100%;
   height: 75px;
+  /* To hide any items behind it when scrolling */
+  z-index: 1;
+  background-color: rgba(234, 231, 220, 1);
 
   /* Mobile styles */
   @media screen and (max-width: 899px) {
