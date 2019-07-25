@@ -6,6 +6,7 @@ import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Lightbox from "../components/projects/lightbox"
 
 const Container = styled.section`
   height: 100vh;
@@ -14,19 +15,6 @@ const Container = styled.section`
 const StyledImg = styled(Img)`
   max-height: 150px;
   margin-bottom: 25px;
-`
-
-const ImgThumbnail = styled(Img)`
-  margin: 5px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-`
-
-const ImageBox = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  border: 3px solid rgba(0, 0, 0, 0.2);
-  width: 100%;
-  margin-bottom: 10%;
 `
 
 const Project = ({ data }) => (
@@ -51,12 +39,7 @@ const Project = ({ data }) => (
       <StyledImg fluid={data.sanityProject.thumbnail.asset.fluid} />
       <h1>{data.sanityProject.title}</h1>
       <p>{data.sanityProject.description}</p>
-      <ImageBox>
-        {data.sanityProject.images.map(image => (
-          // TODO: Implement/use an external a lightbox for all these photos
-          <ImgThumbnail fluid={image.asset.fluid} key={image.asset.fluid.src} />
-        ))}
-      </ImageBox>
+      <Lightbox images={data.sanityProject.images} />
     </Container>
   </Layout>
 )
@@ -85,7 +68,6 @@ export const pageQuery = graphql`
             srcSet
             src
             sizes
-            aspectRatio
           }
         }
       }
