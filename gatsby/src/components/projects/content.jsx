@@ -19,9 +19,9 @@ const H1 = styled.h1`
 const Projects = ({ data }) => (
   <Container>
     <H1>Our Work</H1>
-    {data.map(project => (
-      <Thumbnail project={project} key={project.id} />
-    ))}
+    {data.map(project => {
+      return <Thumbnail project={project} key={project.id} />
+    })}
   </Container>
 )
 

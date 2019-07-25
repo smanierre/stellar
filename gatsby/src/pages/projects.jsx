@@ -38,8 +38,8 @@ export const pageQuery = graphql`
     allSanityProject {
       edges {
         node {
-          id
           title
+          id
           thumbnail {
             asset {
               fluid {
@@ -49,16 +49,8 @@ export const pageQuery = graphql`
               }
             }
           }
-          description
           slug {
             current
-          }
-          images {
-            asset {
-              fluid {
-                src
-              }
-            }
           }
         }
       }
