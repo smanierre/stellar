@@ -13,26 +13,9 @@ exports.createPages = async ({ actions, graphql }) => {
         edges {
           node {
             id
-            title
-            thumbnail {
-              asset {
-                fluid {
-                  srcSet
-                  src
-                  sizes
-                }
-              }
             }
-            description
             slug {
               current
-            }
-            images {
-              asset {
-                fluid {
-                  src
-                }
-              }
             }
           }
         }
@@ -40,12 +23,10 @@ exports.createPages = async ({ actions, graphql }) => {
     }
   `)
 
-  // TODO: Finish setting this up in the ./src/templates/project.jsx file
   const projects = res.data.allSanityProject.edges.map(edge => edge.node)
   projects.forEach(project => {
-    const slug = project.slug.current
     actions.createPage({
-      path: `/projects/${slug}`,
+      path: `/projects/${project.slug.current}`,
       component: require.resolve("./src/templates/project.jsx"),
       context: { id: project.id },
     })
