@@ -3,6 +3,8 @@ import styled from "styled-components"
 import PropTypes from "prop-types"
 import Img from "gatsby-image"
 
+import Slideshow from "./lightbox-slideshow"
+
 const LightboxContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -46,7 +48,13 @@ export default class lightbox extends Component {
             </div>
           ))}
         </LightboxContainer>
-        {showLightbox && null}
+        {showLightbox && (
+          <Slideshow
+            closeToggle={() => {
+              this.setState({ showLightbox: false })
+            }}
+          />
+        )}
       </>
     )
   }
