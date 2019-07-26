@@ -19,7 +19,7 @@ const LightboxContainer = styled.div`
   }
 `
 
-export default class lightbox extends Component {
+export default class Lightbox extends Component {
   static propTypes = {
     images: PropTypes.instanceOf(Array).isRequired,
   }
