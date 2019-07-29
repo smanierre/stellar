@@ -22,10 +22,12 @@ const CloseIcon = styled.svg`
 `
 
 class Slideshow extends Component {
-  //   constructor(props) {
-  //     super(props)
-  //     this.state = {}
-  //   }
+    constructor(props) {
+      super(props)
+      this.state = {
+        photoIndex: props.photoIndex,
+      }
+    }
 
   static propTypes = {
     closeToggle: PropTypes.func.isRequired,

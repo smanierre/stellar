@@ -38,10 +38,12 @@ export default class Lightbox extends Component {
     return (
       <>
         <LightboxContainer>
-          {images.map(image => (
+          {images.map((image, index) => (
             // For some reason, the <Img /> tag can't have an onClick handler...
             <div
-              onClick={() => this.setState({ showLightbox: true })}
+              onClick={() =>
+                this.setState({ showLightbox: true, photoIndex: index })
+              }
               key={image.asset.fluid.src}
             >
               <Img fluid={{ ...image.asset.fluid, aspectRatio: 1 }} />
@@ -50,6 +52,8 @@ export default class Lightbox extends Component {
         </LightboxContainer>
         {showLightbox && (
           <Slideshow
+            images={images}
+            photoIndex={photoIndex}
             closeToggle={() => {
               this.setState({ showLightbox: false })
             }}
