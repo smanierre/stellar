@@ -13,7 +13,7 @@ const Container = styled.section`
 `
 
 const StyledImg = styled(Img)`
-  max-height: 150px;
+  max-height: 300px;
   margin-bottom: 25px;
 `
 
@@ -38,7 +38,9 @@ const Project = ({ data }) => (
     <Container>
       <StyledImg fluid={data.sanityProject.thumbnail.asset.fluid} />
       <h1>{data.sanityProject.title}</h1>
-      <p>{data.sanityProject.description}</p>
+      <p style={{ overflow: "scroll", height: 400 }}>
+        {data.sanityProject.description}
+      </p>
       <Lightbox images={data.sanityProject.images} />
     </Container>
   </Layout>

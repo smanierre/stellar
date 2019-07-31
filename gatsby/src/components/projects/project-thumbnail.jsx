@@ -7,6 +7,7 @@ import { Link } from "gatsby"
 const ProjectContainer = styled.figure`
   width: 100%;
   height: 300px;
+  margin-bottom: 10vh;
 `
 const StyledCaption = styled.figcaption`
   padding-top: 20px;
