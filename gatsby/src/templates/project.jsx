@@ -68,6 +68,7 @@ export const pageQuery = graphql`
             srcSet
             src
             sizes
+            aspectRatio
           }
         }
       }

@@ -14,7 +14,7 @@ const ArrowIcon = styled.svg`
         transform: rotate(180deg) translateY(50%)`}
 `
 
-const Arrow = ({ left }) => (
+const Arrow = ({ left, onClick }) => (
   <ArrowIcon
     xmlns="http://www.w3.org/2000/svg"
     x="0px"
@@ -24,6 +24,7 @@ const Arrow = ({ left }) => (
     viewBox="0 0 40 40"
     style={{ fill: "transparent" }}
     left={left}
+    onClick={onClick}
   >
     <path
       fill="rgba(241, 241, 241, 0.9)"
