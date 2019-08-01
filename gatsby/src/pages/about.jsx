@@ -1,10 +1,14 @@
 import React from "react"
+import { graphql } from "gatsby"
+import PropTypes from "prop-types"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Content from "../components/about/content"
 
-const AboutPage = () => {
+const AboutPage = ({ data }) => {
+  const employees = data.allSanityEmployee.nodes
+  console.log(employees)
   return (
     <Layout>
       <SEO
@@ -23,9 +27,30 @@ const AboutPage = () => {
           "whelen",
         ]}
       />
-      <Content />
+      <Content employees={employees} />
     </Layout>
   )
 }
 
 export default AboutPage
+
+AboutPage.propTypes = {
+  data: PropTypes.instanceOf(Object).isRequired,
+}
+
+export const pageQuery = graphql`
+  query {
+    allSanityEmployee {
+      nodes {
+        id
+        photo {
+          asset {
+            _ref
+          }
+        }
+        description
+        name
+      }
+    }
+  }
+`
