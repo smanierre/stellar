@@ -12,9 +12,9 @@ const StyledH2 = styled.h2`
 const Content = () => (
   <StaticQuery
     // TODO: Get a query to pull pictures and text from markdown files for each employee.
-    query={graphql`
+    /*query={graphql`
       query 
-    `}
+    `}*/
     render={data => (
       <Container>
         <StyledH2>About us</StyledH2>
