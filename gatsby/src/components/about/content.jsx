@@ -18,9 +18,9 @@ const Content = ({ employees }) => (
       We are a small company based out of Chester Airport. We specialize in
       installing avionics
     </p>
-    <p>Meet our staff:</p>
+    <h3>Our employees</h3>
     {employees.map(employee => (
-      <Employee employee={employee} />
+      <Employee employee={employee} key={employee.id} />
     ))}
   </Container>
 )

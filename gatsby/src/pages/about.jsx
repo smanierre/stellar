@@ -8,7 +8,6 @@ import Content from "../components/about/content"
 
 const AboutPage = ({ data }) => {
   const employees = data.allSanityEmployee.nodes
-  console.log(employees)
   return (
     <Layout>
       <SEO
@@ -45,7 +44,12 @@ export const pageQuery = graphql`
         id
         photo {
           asset {
-            _ref
+            fluid {
+              srcSet
+              src
+              sizes
+              aspectRatio
+            }
           }
         }
         description
