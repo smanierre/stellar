@@ -6,22 +6,37 @@ import ButtonLink from "../utilities/button-link"
 const Container = styled.section`
   text-align: center;
   padding-top: 15%;
+  position: relative;
+`
+
+const StellarSpan = styled.span`
+  font-size: 3rem;
+  font-weight: 400;
+  padding: 0 25px 0 calc(50px + 10%);
+  position: absolute;
+  top: 9%;
+  left: -50px;
+  background-color: rgba(255, 255, 255, 0.3);
+  clip-path: polygon(0 0, calc(100% - 25px) 0, 100% 100%, 0 100%);
+`
+
+const AvionicsSpan = styled.span`
+  font-size: 2.5rem;
+  font-weight: 400;
+  position: absolute;
+  top: calc(15% + 35px);
+  right: -50px;
+  background-color: rgba(255, 255, 255, 0.3);
+  clip-path: polygon(25px 0, 100% 0, 100% 100%, 0 100%);
+  padding: 0 100px 0 25px;
 `
 
 const Content = () => (
   <Container>
     <h1>
-      <span
-        style={{ fontSize: "3rem", fontWeight: "400", padding: "0 25% 0 0" }}
-      >
-        Stellar
-      </span>
+      <StellarSpan>Stellar</StellarSpan>
       <br />
-      <span
-        style={{ fontSize: "2.5rem", fontWeight: "400", padding: "0 0 0 25%" }}
-      >
-        Avionics
-      </span>
+      <AvionicsSpan>Avionics</AvionicsSpan>
     </h1>
 
     <h2 style={{ margin: "30% 0", fontWeight: "400" }}>

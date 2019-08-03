@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 
-import Employee from "./Employee"
+import Employee from "./employee"
 
 const Container = styled.section`
   margin-top: 50px;

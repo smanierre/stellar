@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 const StyledNav = styled.nav`
   position: absolute;
-  left: -100vw;
+  right: -100vw;
   height: 100vh;
   width: 100vw;
   background-color: rgba(201, 199, 196, 1);

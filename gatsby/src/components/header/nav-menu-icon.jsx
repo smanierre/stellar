@@ -56,7 +56,7 @@ const MenuToggle = styled.input`
   left: -9999px;
 
   &:checked ~ nav {
-    left: 0;
+    right: 0;
   }
 
   &:checked + label > span {
