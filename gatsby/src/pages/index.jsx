@@ -1,10 +1,12 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Content from "../components/index/content"
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
+  console.log(data)
   return (
     <Layout>
       <SEO
@@ -29,3 +31,15 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+export const pageQuery = graphql`
+  query {
+    logo: file(relativePath: { eq: "plane.jpg" }) {
+      childImageSharp {
+        fixed {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
