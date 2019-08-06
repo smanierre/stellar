@@ -15,8 +15,13 @@ import "./layout.css"
 
 const PageLayout = styled.div`
   max-width: 100vw;
+  height: 100vh;
   display: grid;
-
+  background-image: ${({ background }) =>
+    background ? `url(${background})` : ""};
+  background-size: cover;
+  background-position: right;
+  overflow: ${({ uri }) => (uri === "/" ? "hidden" : "scroll")};
   grid-template-rows: [header] 75px auto;
   grid-template-columns: [gutter-left] 50px [content] 1fr [gutter-right] 50px;
 
@@ -41,17 +46,27 @@ const Layout = props => (
         }
       }
     `}
-    render={data => (
-      <PageLayout>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <MainLayout>{props.children}</MainLayout>
-      </PageLayout>
-    )}
+    render={data => {
+      const { uri, background } = props
+      return (
+        <PageLayout background={background} uri={uri}>
+          <Header siteTitle={data.site.siteMetadata.title} uri={uri} />
+          <MainLayout>{props.children}</MainLayout>
+        </PageLayout>
+      )
+    }}
   />
 )
 
 export default Layout
 
+Layout.defaultProps = {
+  uri: "",
+  background: "",
+}
+
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  background: PropTypes.string,
+  uri: PropTypes.string,
 }
