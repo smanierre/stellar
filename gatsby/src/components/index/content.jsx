@@ -22,7 +22,7 @@ const StellarSpan = styled.span`
   clip-path: polygon(0 0, calc(100% - 25px) 0, 100% 100%, 0 100%);
 `
 const HeroText = styled.h2`
-  margin: 30% 0 30% -50px;
+  margin: 30% 0 30% 0;
   padding: 25px 0;
   font-weight: 400;
   display: inline-block;

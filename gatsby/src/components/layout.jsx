@@ -23,7 +23,7 @@ const PageLayout = styled.div`
   background-position: right;
   overflow: ${({ uri }) => (uri === "/" ? "hidden" : "scroll")};
   grid-template-rows: [header] 75px auto;
-  grid-template-columns: [gutter-left] 50px [content] 1fr [gutter-right] 50px;
+  grid-template-columns: [gutter-left] 1fr [content] 5fr [gutter-right] 1fr;
 
   @media screen and (min-width: 900px) {
     grid-template-columns: [gutter-left] 1fr [content] 10fr [gutter-right] 1fr;
