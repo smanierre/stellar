@@ -9,7 +9,10 @@ import Content from "../components/index/content"
 const IndexPage = props => {
   const { data, uri } = props
   return (
-    <Layout background={data.background.childImageSharp.fluid.src} uri={uri}>
+    <Layout
+      background={data.background.childImageSharp.fluid.originalImg}
+      uri={uri}
+    >
       <SEO
         title="Home"
         keywords={[
@@ -42,7 +45,7 @@ export const pageQuery = graphql`
     background: file(relativePath: { eq: "plane.jpg" }) {
       childImageSharp {
         fluid {
-          src
+          originalImg
         }
       }
     }
