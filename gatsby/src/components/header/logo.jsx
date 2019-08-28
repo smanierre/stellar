@@ -25,6 +25,10 @@ const LogoContainer = styled(RelativeContainer)`
   }
 `
 
+const StyledImg = styled(Img)`
+  filter: drop-shadow(3px 3px 6px #fff); // TODO: Refine this
+`
+
 const ExportedLogo = ({ to }) => (
   <StaticQuery
     query={graphql`
@@ -41,7 +45,7 @@ const ExportedLogo = ({ to }) => (
     render={data => (
       <LogoContainer>
         <Logo to={to}>
-          <Img fixed={data.logo.childImageSharp.fixed} />
+          <StyledImg fixed={data.logo.childImageSharp.fixed} />
         </Logo>
       </LogoContainer>
     )}

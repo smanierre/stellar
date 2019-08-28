@@ -12,6 +12,14 @@ const StyledItem = styled(Link)`
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   text-decoration: none;
   color: #e85a4f;
+  transition: all 0.5s;
+
+  @media screen and (min-width: 900px) {
+    border-bottom: none;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+  }
 `
 
 const NavItem = ({ to, children }) => (

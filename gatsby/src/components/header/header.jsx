@@ -21,7 +21,7 @@ const ResponsiveHeader = styled.header`
   z-index: 1;
   ${({ uri }) =>
     uri === "/"
-      ? "background-color: rgba(0, 0, 0, 0.1);"
+      ? "background-color: rgba(255, 255, 255, 0.4);"
       : `background-color: rgba(234, 231, 220, 1);`}
 
   /* Mobile styles */

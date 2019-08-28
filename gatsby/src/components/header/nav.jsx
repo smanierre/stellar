@@ -15,6 +15,16 @@ const StyledNav = styled.nav`
   flex-direction: column;
   font-size: 24px;
   transition: all 0.6s;
+
+  @media screen and (min-width: 900px) {
+    position: relative;
+    height: 75px;
+    width: 100%;
+    right: 0;
+    padding: 0;
+    background-color: transparent;
+    flex-direction: row;
+  }
 `
 
 const Nav = ({ children }) => <StyledNav>{children}</StyledNav>
