@@ -20,25 +20,42 @@ const StellarSpan = styled.span`
   left: -50px;
   background-color: rgba(255, 255, 255, 0.4);
   clip-path: polygon(0 0, calc(100% - 25px) 0, 100% 100%, 0 100%);
+
+  @media screen and (min-width: 900px) {
+    text-align: right;
+    font-size: 5rem;
+    padding: 0 50px 0 calc(50px + 10%);
+  }
 `
 const HeroText = styled.h2`
-  margin: 30% 0 30% 0;
+  margin: 30% 0;
   padding: 25px 0;
   font-weight: 400;
   display: inline-block;
   width: 100vw;
   background-color: rgba(255, 255, 255, 0.4);
+  font-style: italics;
+
+  @media screen and (min-width: 900px) {
+    margin: 10% 0 25px 0;
+  }
 `
 
 const AvionicsSpan = styled.span`
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 400;
+  padding: 0 25px 0 calc(50px + 10%);
   position: absolute;
-  top: calc(15% + 35px);
-  right: -50px;
+  top: 30%;
+  left: -50px;
   background-color: rgba(255, 255, 255, 0.4);
-  clip-path: polygon(25px 0, 100% 0, 100% 100%, 0 100%);
-  padding: 0 100px 0 25px;
+  clip-path: polygon(0 0, calc(100% - 25px) 0, 100% 100%, 0 100%);
+
+  @media screen and (min-width: 900px) {
+    text-align: right;
+    font-size: 5rem;
+    padding: 0 50px 0 calc(50px + 10%);
+  }
 `
 
 const Content = () => (

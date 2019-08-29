@@ -19,7 +19,7 @@ const StyledNav = styled.nav`
   @media screen and (min-width: 900px) {
     position: relative;
     height: 75px;
-    width: 100%;
+    width: 33%;
     right: 0;
     padding: 0;
     background-color: transparent;

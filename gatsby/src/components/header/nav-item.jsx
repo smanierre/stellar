@@ -17,6 +17,7 @@ const StyledItem = styled(Link)`
   @media screen and (min-width: 900px) {
     border-bottom: none;
     &:hover {
+      /* Fix this so it only happens on the main page */
       background-color: rgba(255, 255, 255, 0.6);
     }
   }

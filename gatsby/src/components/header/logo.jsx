@@ -26,7 +26,7 @@ const LogoContainer = styled(RelativeContainer)`
 `
 
 const StyledImg = styled(Img)`
-  filter: drop-shadow(3px 3px 6px #fff); // TODO: Refine this
+  filter: drop-shadow(3px 3px 6px #fff);
 `
 
 const ExportedLogo = ({ to }) => (
@@ -35,7 +35,7 @@ const ExportedLogo = ({ to }) => (
       query {
         logo: file(relativePath: { eq: "stellar_logo_red.png" }) {
           childImageSharp {
-            fixed(height: 100) {
+            fixed(height: 125) {
               ...GatsbyImageSharpFixed
             }
           }
