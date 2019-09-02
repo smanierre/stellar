@@ -38,7 +38,7 @@ const Project = ({ data }) => (
     <Container>
       <StyledImg fluid={data.sanityProject.thumbnail.asset.fluid} />
       <h1>{data.sanityProject.title}</h1>
-      <p style={{ overflow: "scroll", height: 400 }}>
+      <p style={{ overflowY: "scroll", height: 400 }}>
         {data.sanityProject.description}
       </p>
       <Lightbox images={data.sanityProject.images} />

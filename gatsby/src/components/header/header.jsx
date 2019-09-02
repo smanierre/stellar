@@ -53,7 +53,7 @@ const Header = props => {
         <NavMenuIcon />
         <Nav>
           {items.map(item => (
-            <NavItem to={item.to} key={item.key}>
+            <NavItem to={item.to} key={item.key} uri={uri}>
               {item.text}
             </NavItem>
           ))}

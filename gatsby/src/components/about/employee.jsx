@@ -18,6 +18,7 @@ const Styledh4 = styled.h4`
   margin-top: 25px;
 `
 
+// TODO: Style for desktop
 const Employee = ({ employee }) => (
   <StyledEmployee>
     <StyledImg fluid={{ ...employee.photo.asset.fluid }} />

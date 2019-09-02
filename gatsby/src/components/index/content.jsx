@@ -16,15 +16,14 @@ const StellarSpan = styled.span`
   font-weight: 400;
   padding: 0 25px 0 calc(50px + 10%);
   position: absolute;
-  top: 9%;
+  top: 65px;
   left: -50px;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.6);
   clip-path: polygon(0 0, calc(100% - 25px) 0, 100% 100%, 0 100%);
 
   @media screen and (min-width: 900px) {
     text-align: right;
-    font-size: 5rem;
-    padding: 0 50px 0 calc(50px + 10%);
+    font-size: 3.5rem;
   }
 `
 const HeroText = styled.h2`
@@ -35,7 +34,7 @@ const HeroText = styled.h2`
   width: 100vw;
   background-color: rgba(255, 255, 255, 0.4);
   font-style: italics;
-
+  filter: drop-shadow(3px 3px 6px #fff);
   @media screen and (min-width: 900px) {
     margin: 10% 0 25px 0;
   }
@@ -46,15 +45,15 @@ const AvionicsSpan = styled.span`
   font-weight: 400;
   padding: 0 25px 0 calc(50px + 10%);
   position: absolute;
-  top: 30%;
+  top: 130px;
   left: -50px;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.6);
   clip-path: polygon(0 0, calc(100% - 25px) 0, 100% 100%, 0 100%);
 
   @media screen and (min-width: 900px) {
+    top: 140px;
     text-align: right;
-    font-size: 5rem;
-    padding: 0 50px 0 calc(50px + 10%);
+    font-size: 3.5rem;
   }
 `
 

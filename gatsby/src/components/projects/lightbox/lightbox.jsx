@@ -14,8 +14,15 @@ const LightboxContainer = styled.div`
   padding: 5px;
   margin-bottom: 10%;
 
-  & * {
+  & div {
+    padding: 10px;
+  }
+
+  & div div {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    &:hover {
+      cursor: pointer;
+    }
   }
 `
 

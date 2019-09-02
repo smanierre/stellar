@@ -9,6 +9,11 @@ const Container = styled.section`
   grid-column: content;
   display: flex;
   flex-direction: column;
+
+  @media screen and (min-width: 900px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 `
 
 const H1 = styled.h1`
@@ -17,12 +22,14 @@ const H1 = styled.h1`
 `
 
 const Projects = ({ data }) => (
-  <Container>
+  <>
     <H1>Our Work</H1>
-    {data.map(project => {
-      return <Thumbnail project={project} key={project.id} />
-    })}
-  </Container>
+    <Container>
+      {data.map(project => {
+        return <Thumbnail project={project} key={project.id} />
+      })}
+    </Container>
+  </>
 )
 
 export default Projects

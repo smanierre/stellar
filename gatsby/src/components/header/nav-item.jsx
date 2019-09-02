@@ -16,27 +16,33 @@ const StyledItem = styled(Link)`
 
   @media screen and (min-width: 900px) {
     border-bottom: none;
+    padding-right: 0 50px;
     &:hover {
-      /* Fix this so it only happens on the main page */
-      background-color: rgba(255, 255, 255, 0.6);
+      background-color: ${({ uri }) =>
+        uri === "/" ? "rgba(255, 255, 255, 0.6);" : "rgba(209, 206, 195, 1);"}
+      cursor: pointer;
     }
   }
 `
 
-const NavItem = ({ to, children }) => (
-  <StyledItem
-    to={to}
-    onClick={() => {
-      document.querySelector("#menu-toggle").checked = false
-    }}
-  >
-    {children}
-  </StyledItem>
-)
+const NavItem = ({ to, children, uri }) => {
+  return (
+    <StyledItem
+      to={to}
+      uri={uri}
+      onClick={() => {
+        document.querySelector("#menu-toggle").checked = false
+      }}
+    >
+      {children}
+    </StyledItem>
+  )
+}
 
 export default NavItem
 
 NavItem.propTypes = {
   to: PropTypes.string.isRequired,
   children: PropTypes.string.isRequired,
+  uri: PropTypes.string.isRequired,
 }
