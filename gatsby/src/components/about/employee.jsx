@@ -12,6 +12,10 @@ const StyledEmployee = styled.article`
 const StyledImg = styled(Img)`
   height: 300px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+
+  @media screen and (min-width: 900px) {
+    width: 300px;
+  }
 `
 
 const Styledh4 = styled.h4`
@@ -21,7 +25,7 @@ const Styledh4 = styled.h4`
 // TODO: Style for desktop
 const Employee = ({ employee }) => (
   <StyledEmployee>
-    <StyledImg fluid={{ ...employee.photo.asset.fluid }} />
+    <StyledImg fixed={{ ...employee.photo.asset.fixed }} />
     <Styledh4>{employee.name}</Styledh4>
     <p>{employee.description}</p>
   </StyledEmployee>

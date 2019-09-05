@@ -44,11 +44,12 @@ export const pageQuery = graphql`
         id
         photo {
           asset {
-            fluid {
-              srcSet
-              src
-              sizes
+            fixed {
+              height
+              width
               aspectRatio
+              src
+              srcSet
             }
           }
         }

@@ -8,6 +8,10 @@ const StyledH2 = styled.h2`
   font-size: 2rem;
 `
 
+const Map = styled.iframe`
+  //TODO Add styles to make map look better
+`
+
 const Content = () => (
   <StyledSection>
     <StyledH2>How to reach us:</StyledH2>
@@ -30,7 +34,7 @@ const Content = () => (
       <br />
       Chester, CT 06412
     </p>
-    <iframe
+    <Map
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.425857637693!2d-72.50887508466101!3d41.38655717926423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e63a97eff1ab6f%3A0x574f21ab15da046d!2sStellar+Avionics+Services+LLC!5e0!3m2!1sen!2sus!4v1564791529521!5m2!1sen!2sus"
       width="100%"
       height="300"
