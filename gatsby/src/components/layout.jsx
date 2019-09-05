@@ -21,7 +21,7 @@ const PageLayout = styled.div`
     background ? `url(${background})` : ""};
   background-size: cover;
   background-position: right;
-  overflow: ${({ uri }) => (uri === "/" ? "hidden" : "scroll")};
+  overflow: ${({ uri }) => (uri === "/" ? "hidden" : "")};
   grid-template-rows: [header] 75px auto;
   grid-template-columns: [gutter-left] 1fr [content] 5fr [gutter-right] 1fr;
 

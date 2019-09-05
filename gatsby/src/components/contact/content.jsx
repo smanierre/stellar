@@ -10,12 +10,22 @@ const StyledH2 = styled.h2`
 
 const Map = styled.iframe`
   //TODO Add styles to make map look better
+  display: inline-block;
+  width: 69%;
+  margin-left: 10%;
+  height: 60vh;
 `
 
 const Content = () => (
   <StyledSection>
     <StyledH2>How to reach us:</StyledH2>
-    <p>
+    <p
+      style={{
+        display: "inline-block",
+        marginBottom: "auto",
+        verticalAlign: "top",
+      }}
+    >
       Call us at:
       <br />
       (860) 322-4244
