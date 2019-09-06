@@ -9,6 +9,7 @@ const Container = styled.section`
   grid-column: content;
   display: flex;
   flex-direction: column;
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
 
   @media screen and (min-width: 900px) {
     flex-direction: row;
@@ -19,6 +20,11 @@ const Container = styled.section`
 const H1 = styled.h1`
   text-align: center;
   margin: 0 auto 50px auto;
+
+  @media screen and (min-width: 900px) {
+    font-size: 3rem;
+    margin-top: 10%;
+  }
 `
 
 const Projects = ({ data }) => (
