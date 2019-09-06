@@ -1,3 +1,7 @@
+const dotenv = require("dotenv")
+
+dotenv.config()
+
 module.exports = {
   siteMetadata: {
     title: `Stellar Avionics`,
@@ -19,7 +23,7 @@ module.exports = {
     {
       resolve: "gatsby-source-sanity",
       options: {
-        projectId: "us04s6r2",
+        projectId: process.env.SANITY_ID,
         dataset: "production",
       },
     },

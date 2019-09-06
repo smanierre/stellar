@@ -1,3 +1,4 @@
 */node_modules
 *.psd
 portfolio-studio/dist
+gatsby/.env
