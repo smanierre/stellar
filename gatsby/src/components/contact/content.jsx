@@ -33,8 +33,8 @@ const Content = () => (
       <br />
       Email us at:
       <br />
-      <a href="mailto:test@gmail.com" rel="noreferrer noopener" target="_blank">
-        test@gmail.com
+      <a href="mailto:stellaravionics@gmail.com" rel="noreferrer noopener" target="_blank">
+        stellaravionics@gmail.com
       </a>
       <br />
       <br />
